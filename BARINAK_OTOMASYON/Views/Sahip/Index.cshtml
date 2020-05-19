@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BARINAK_OTOMASYON.Models.Sahip>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SAHİP LİSTESİ</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SAHIP_AD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SAHIP_SOYAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SAHIP_TEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SAHIP_ADRES)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAHIP_AD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAHIP_SOYAD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAHIP_TEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SAHIP_ADRES)
+        </td>
+        <td>
+            <button type="button" class="btn btn-dark">@Html.ActionLink("Düzenle", "Düzenle", new { id = item.SAHIP_ID })</button>  ||
+            <button type="button" class="btn btn-dark"> @Html.ActionLink("Sil", "Sil", new { id = item.SAHIP_ID })</button>
+        </td>
+    </tr>
+}
+
+</table>

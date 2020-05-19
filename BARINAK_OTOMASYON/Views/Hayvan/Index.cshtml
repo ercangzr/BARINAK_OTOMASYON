@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BARINAK_OTOMASYON.Models.Hayvan>
+
+@{
+    ViewBag.Title = "AnaSayfa";
+}
+
+    <h2>BARINAĞIMIZDAKİ HAYVANLAR</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HAYVAN_CINSI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HAYVAN_YASI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HAYVAN_CINSIYETI)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HAYVAN_CINSI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HAYVAN_YASI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HAYVAN_CINSIYETI)
+            </td>
+            <td>
+                <button type="button" class="btn btn-dark"> @Html.ActionLink("Düzenle", "Düzenle", new { id = item.HAYVAN_ID })</button> ||
+                <button type="button" class="btn btn-dark"> @Html.ActionLink("Sil", "Sil", new { id = item.HAYVAN_ID })</button> 
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,57 @@
+﻿@model BARINAK_OTOMASYON.Models.Sahip
+
+@{
+    ViewBag.Title = "SİL";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SAHİP SİL</h2>
+
+<h3>SAHİP SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ ?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SAHIP_AD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAHIP_AD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SAHIP_SOYAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAHIP_SOYAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SAHIP_TEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAHIP_TEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SAHIP_ADRES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SAHIP_ADRES)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-default" /> |
+    <button type="button" class="btn btn-dark"> @Html.ActionLink("ListeyeDön", "Index")</button>
+</div>
+    }
+</div>

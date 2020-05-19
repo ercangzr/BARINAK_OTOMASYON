@@ -1,0 +1,48 @@
+﻿@model BARINAK_OTOMASYON.Models.Hayvan
+
+@{
+    ViewBag.Title = "SİL";
+}
+
+<h2>HAYVAN SİL</h2>
+
+<h3>HAYVAN SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ ?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HAYVAN_CINSI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HAYVAN_CINSI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HAYVAN_YASI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HAYVAN_YASI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HAYVAN_CINSIYETI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HAYVAN_CINSIYETI)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="SİL" class="btn btn-default" /> |
+    <button type="button" class="btn btn-dark"> @Html.ActionLink("ListeyeDön", "Index")</button>
+</div>
+    }
+</div>
